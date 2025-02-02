@@ -1,0 +1,13 @@
+[package]
+name = "bevy_pointer_to_world"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+bevy.workspace = true
+
+[lints]
+workspace = true
