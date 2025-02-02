@@ -1,13 +1,29 @@
 [package]
 name = "bevy_pointer_to_world"
-version.workspace = true
-edition.workspace = true
-repository.workspace = true
-authors.workspace = true
-rust-version.workspace = true
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/jens-hj/bevy_pointer_to_world"
+authors = ["Avianastra <avianastra@gmail.com>"]
 
 [dependencies]
-bevy.workspace = true
+bevy = "0.15.0"
 
-[lints]
-workspace = true
+[lints.rust]
+unsafe_code                   = "forbid"
+missing_debug_implementations = "allow"
+missing_docs                  = "allow"
+
+[lints.clippy]
+undocumented_unsafe_blocks       = "warn"
+enum_glob_use                    = "warn"
+cast_possible_truncation         = "warn"
+tests_outside_test_module        = "warn"
+assertions_on_result_states      = "warn"
+pedantic                         = "warn"
+nursery                          = "warn"
+unwrap_used                      = "deny"
+inline_always                    = "allow"
+default_constructed_unit_structs = "allow" # nice for adding plugins, that may later have config values
+needless_pass_by_value           = "allow" # bevy uses a lot of pass by value wrapper types like `Query`, `Res` etc.
+module_name_repetitions          = "allow"
+must_use_candidate               = "allow"
